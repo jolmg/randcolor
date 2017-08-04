@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import sys, colorsys, random
+
+if len(sys.argv) != 2:
+    print("Wrong number of arguments")
+    exit(1)
+
+value = float(sys.argv[1])
+rgb = colorsys.hsv_to_rgb(random.random(), 1, value)
+print("#%02x%02x%02x" % tuple([int(i * 255) for i in rgb]))
